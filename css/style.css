@@ -1,0 +1,1750 @@
+@import url('https://fonts.googleapis.com/css?family=Questrial');
+
+/* ZERAR TAGs
+------------------------------------------- */
+*, *:after, *:before { margin:0; padding:0; border:none; list-style:none; box-sizing: border-box; -moz-box-sizing:border-box; font-weight:normal; font-style:normal; border-spacing:0; -webkit-font-smoothing:antialiased; font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+textarea, select, input[type="text"] { -webkit-appearance:none; }
+object { display: none; }
+
+html, body { height: 100%; margin: 0; padding: 0; background-color: rgba(242, 245, 247, 1); color: rgba(35, 51, 77, 1); }
+	body, input, button, textarea, select, .select { font:Normal .9em 'Questrial', Helvetica, Arial, sans-serif; letter-spacing: .015em; }
+	p { color: rgba(35, 51, 77, .7); line-height: 1.9em; }
+		strong { font-weight: 700; }
+	a { color: rgba(72, 135, 250, 1); text-decoration: none; -webkit-transition: color 300ms ease-out; -moz-transition: color 300ms ease-out; -o-transition: color 300ms ease-out; transition: color 300ms ease-out; }
+
+		.row {
+			margin: 0 auto; padding: 0 14px;
+			max-width: 1140px;
+		}
+		main {
+			overflow: hidden;
+			position: relative;
+		}
+		button, .btn {
+			background-color: rgba(72, 135, 250, 1); border-radius: 4px; box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.15);
+			color: rgba(255, 255, 255, 1);
+			font-size: 1em; font-weight: 700;
+			cursor: pointer;
+			padding: 16px 37px 15px 37px;
+			transition: all .15s ease;
+		}
+			button:hover, .btn:hover {
+				background-color: rgba(72, 135, 250, .8);
+		    transform: translateY(-1px);
+				box-shadow: 0 7px 16px 0px rgba(0, 0, 0, .1);
+			}
+			button:active, .btn:active {
+				transform: translateY(1px);
+				box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.15);
+				background-color: rgb(103, 114, 229);
+			}
+		.btn-small {
+			padding: 12px 0;
+		}
+		.btn-white {
+			background-color: rgba(255, 255, 255, 1); color: rgba(57, 190, 211, 1);
+		}
+			.btn-white:hover {
+				background-color: rgba(255, 255, 255, 1);
+			}
+			.btn-white:active {
+				background-color: #f0f0f0;
+			}
+		.btn-opacity {
+			background-color: rgba(255, 255, 255, .15); color: rgba(255, 255, 255, 1);
+			box-shadow: none;
+		}
+			.btn-opacity:hover {
+				background-color: rgba(255, 255, 255, .2);
+			}
+			.btn-opacity:active {
+				background-color: rgba(255, 255, 255, .1);
+			}
+		form button {
+	    padding: 13px 25px;
+		}
+		h1 {
+			font-size: 1.97em; font-weight: 900; line-height: 1.35em; letter-spacing: 0em;
+		}
+		h2 {
+			font-size: 2.15em; font-weight: 700;
+		}
+		h3 {
+			color: rgba(119, 131, 143, 1);
+			font-weight: 400; font-size: 1.2em; letter-spacing: 0.4px;
+		}
+			h3 strong {
+				font-weight: 700;
+			}
+		h4 {
+			font-weight: 700; font-size: 1.15em; letter-spacing: .03em; line-height: 1.95em;
+		}
+			h4 strong {
+				font-weight: 900;
+			}
+		h5 {
+			font-weight: 700; font-size: 1.2em; letter-spacing: .03em; line-height: 1.9em;
+		}
+		h6 strong {
+			font-size: 900;
+		}
+
+		input, textarea, select, input[type=text], .select {  appearance: none; box-shadow: none; border: 1px solid rgba(173, 190, 213, 0.5); border-radius: 4px; font-size: 1em; padding: 12px 17px; outline: none; color: rgba(88, 108, 136, 1); }
+		input::placeholder, textarea::placeholder, select::placeholder { color: rgba(88, 108, 136, .3); }
+		input:focus, textarea:focus, select:focus { border-color: rgba(0,0,0,0.4); outline: none; }
+		button:focus { border-color: none; outline: none; }
+		.select { display: block; padding: 0; }
+			.select select { border: 0; background: transparent; -webkit-appearance: none; color: rgba(173, 190, 213, 1); width: 100%; }
+			.select:before {
+				content:" ";
+				display: inline-block;
+				-webkit-font-smoothing: antialiased;
+				position: absolute; right: 11px; top: 15px;
+				text-shadow: 0 1px 0 #fff;
+				pointer-events: none;
+				width: 15px; height: 10px;
+				background: url("../images/icon-arrow2.svg") no-repeat center center;
+				transform: rotate(180deg);
+				opacity: .3;
+			}
+		form .case input, form .case textarea, form .case input[type=text] {
+			padding-right: 35px;
+		}
+		form .case {
+		  display: flex;
+		  flex-flow: column-reverse;
+			position: relative;
+			text-align: left;
+		}
+			form .case .help-block {
+				position: absolute;
+				font-size: .9em;
+				right: 0;
+				margin-top: 18px;
+				color: rgba(218, 50, 50, 1);
+				text-align: right;
+				z-index: 10;
+			}
+		  form label, form input, form textarea, form select {
+		    transition: all 0.2s;
+		    touch-action: manipulation;
+		  }
+		  form input, form textarea, form select {
+		    -webkit-appearance: none;
+		    cursor: text;
+				z-index: 1;
+				background-color: transparent;
+		  }
+				form input:focus, form textarea:focus, form .select:focus {
+					border: 1px solid rgba(173, 190, 213, 0.5);
+				}
+				form input.valid, form textarea.valid {
+					outline: 0;
+					background: transparent url("../images/icon-check.png") no-repeat right 15px center;
+				}
+					form .has-success .valid:focus {
+						border-color: rgba(72, 135, 250, 0.8);
+						box-shadow: 0 0 2px 2px rgba(72, 135, 250, .1);
+						background: none;
+					}
+				form input.error, form textarea.error {
+					outline: 0;
+					border-color: rgba(227, 109, 109, 1) !important;
+					box-shadow: 0 0 2px 2px rgba(227, 109, 109, .1);
+					background: transparent url("../images/icon-error.png") no-repeat right 15px center;
+				}
+		  form input:placeholder-shown + label, form textarea:placeholder-shown + label {
+		    cursor: text;
+		    white-space: nowrap;
+		    overflow: hidden;
+		    text-overflow: ellipsis;
+		    transform-origin: left bottom;
+				color: rgba(173, 190, 213, 1);
+				position: absolute;
+				top: 13px;
+				left: 17px;
+		  }
+		    form ::-webkit-input-placeholder, form ::-webkit-textarea-placeholder {
+		      opacity: 0;
+		      transition: inherit;
+		    }
+		    form input:focus::-webkit-input-placeholder, form textarea:focus::-webkit-textarea-placeholder {
+		      opacity: 1;
+		    }
+				form input:not(:placeholder-shown) + label, form textarea:not(:placeholder-shown) + label,
+		    form input:focus + label, form textarea:focus + label {
+		      cursor: pointer;
+					color: rgba(173, 190, 213, 1);
+					position: absolute;
+					top: -7px;
+					left: 14px;
+					background-color: rgba(255, 255, 255, 1);
+					font-size: .9em;
+					padding: 0 3px;
+					z-index: 2;
+		    }
+					form .has-error input:not(:placeholder-shown) + label,
+					form .has-error textarea:not(:placeholder-shown) + label,
+					form .has-error input:focus + label,
+					form .has-error textarea:focus + label,
+					form .has-error input:placeholder-shown + label,
+					form .has-error textarea:placeholder-shown + label {
+						color: rgba(218, 50, 50, 1);
+					}
+
+					form .has-success input:focus + label,
+					form .has-success textarea:focus + label{
+						color: rgba(72, 135, 250, 1);
+					}
+			input[type=number]::-webkit-inner-spin-button {
+			  -webkit-appearance: none;
+			  cursor:pointer;
+			  display:block;
+			  width:8px;
+			  color: #333;
+			  text-align:center;
+			  position:relative;
+			}
+			 input[type=number] {
+			 -moz-appearance: textfield;
+			 appearance: textfield;
+			 margin: 0;
+			}
+
+
+/*------------------------------------*\
+			NAV
+\*------------------------------------*/
+	nav {
+	  width: 100%;
+	  position: fixed;
+	  top: 0;
+		z-index: 99;
+	}
+		nav .row {
+			padding: 0;
+		}
+			nav .logo a {
+				height: 38px;
+				width: 152px;
+				display: block;
+				float: left;
+				margin: 22px 0 27px 14px;
+			}
+				nav .logo svg {
+					fill: rgba(35, 51, 77, 1);
+				}
+			nav ul {
+			  overflow: hidden;
+			  padding: 0;
+			  margin: 0 auto;
+			  list-style: none;
+			  text-align: center;
+			}
+				nav ul .item a {
+				  padding: 3px 0;
+				  color: rgba(255, 255, 255, 1);
+					font-weight: 700;
+				  transition: all 0.2s ease;
+					display: block;
+					margin: 32px 26px 28px 17px;
+					border-bottom: 1px solid rgba(255, 255, 255, 0);
+				}
+					nav ul .item a:hover, nav ul li .active {
+					  border-color: rgba(255, 255, 255, 1);
+					}
+				nav ul .buttom {
+					margin: 26px 0 0 15px;
+				}
+					nav ul .btn {
+						width: 110px;
+						display: block;
+						padding-left: 0;
+						padding-right: 0;
+					}
+				nav ul li:last-child {
+					margin-right: 14px;
+				}
+				nav ul li:first-child a, nav ul li:nth-child(0n+2) a {
+				   color: rgba(35, 51, 77, 0.6);
+				}
+					nav ul li:first-child a:hover, nav ul li:first-child .active, nav ul li:nth-child(0n+2) a:hover {
+						border-color: rgba(35, 51, 77, 0.6);
+					}
+
+/* menu */
+		nav .menu {
+		  clear: both;
+		  max-height: 0;
+		  transition: max-height .2s ease-out;
+		}
+/* menu icon */
+			nav .menu-icon {
+			  cursor: pointer;
+			  display: inline-block;
+			  float: right;
+			  padding: 17px 12px;
+			  position: relative;
+			  user-select: none;
+				border: 1px solid rgba(255, 255, 255, .5);
+				border-radius: 4px;
+				margin: 27px ;
+			}
+			nav .menu-icon .navicon {
+			  background: #fff;
+			  display: block;
+			  height: 2px;
+			  position: relative;
+			  transition: background .2s ease-out;
+			  width: 24px;
+			}
+				nav .menu-icon .navicon:before,
+				nav .menu-icon .navicon:after {
+				  background: #fff;
+				  content: '';
+				  display: block;
+				  height: 100%;
+				  position: absolute;
+				  transition: all .2s ease-out;
+				  width: 100%;
+				}
+				nav .menu-icon .navicon:before {
+				  top: 7px;
+				}
+				nav .menu-icon .navicon:after {
+				  top: -7px;
+				}
+
+/* menu btn */
+		nav .menu-btn {
+		  display: none;
+		}
+			nav .menu-btn:checked ~ .menu {
+			  min-height: 410px;
+				background-color: rgba(57, 190, 211, 1);
+			}
+				nav .menu-btn:checked ~ .menu .item {
+					width: 100%;
+				}
+				nav .menu-btn:checked ~ .menu .item a {
+					display: inline-block;
+					margin: 0 0 15px 0;
+    			font-size: 1.3em;
+				}
+				nav .menu-btn:checked ~ .menu .buttom {
+					display: inline;
+				}
+					nav .menu-btn:checked ~ .menu .buttom .btn {
+						display: inline-block;
+						margin: 0 0 25px 0;
+					}
+			nav .menu-btn:checked ~ .menu-icon .navicon {
+			  background: transparent;
+			}
+				nav .menu-btn:checked ~ .menu-icon .navicon:before {
+				  transform: rotate(-45deg);
+				}
+				nav .menu-btn:checked ~ .menu-icon .navicon:after {
+				  transform: rotate(45deg);
+				}
+					nav .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before, nav .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+					  top: 0;
+					}
+
+/* menu active */
+		nav.active {
+			background: rgba(57, 190, 211, 1);
+			box-shadow: 0 1px 5px rgba(0, 0, 0, 0.20);
+		}
+			nav.active .logo svg {
+				fill: rgba(255, 255, 255, 1);
+			}
+			nav.active ul li:first-child a, nav.active ul li:nth-child(0n+2) a {
+				 color: rgba(255, 255, 255, 1);
+			}
+				nav.active ul li:first-child a:hover, nav.active ul li:first-child .active, nav.active ul li:nth-child(0n+2) a:hover {
+					border-color: rgba(255, 255, 255, 1);
+				}
+
+
+/*------------------------------------*\
+		MAIN, SECTIONS
+\*------------------------------------*/
+
+section .row {
+	text-align: left;
+}
+	section .row h3 {
+		margin: 8px 0 38px 0;
+	}
+section .row2 {
+	padding: 0;
+}
+	section .row2 .owl-item {
+		padding: 0 14px;
+	}
+
+
+/*------------------------------------*\
+		HOME - SECTION - CROOKES
+\*------------------------------------*/
+
+#crookes {
+	width: 100%;
+	text-align: center;
+	overflow: hidden;
+}
+	#crookes .card1 {
+		fill: rgba(255, 255, 255, 1);
+		transform: rotate(-18.5deg);
+	  width: 1290px; height: 926.78px;
+	  margin: -530px 0 0 -405px;
+		position: absolute; z-index: 1;
+	}
+	#crookes .card2 {
+		fill: rgba(57, 190, 211, 1);
+		transform: rotate(-18deg);
+		width: 910px; height: 653.78px;
+		margin: -420px 0 0 465px;
+		position: absolute; z-index: 2;
+	}
+	#crookes figure {
+		text-align: center;
+		width: 100%;
+	}
+		#crookes figure .dotted {
+			width: 262px;
+			height: 2.98px;
+			position: absolute;
+			z-index: 3;
+			right: 8%; top: 17%;
+		}
+		#crookes figure .hospital {
+			width: 304px;
+			height: 340.77px;
+			position: absolute;
+			z-index: 4;
+			right: -10%;
+			top: -38%;
+		}
+		#crookes figure .idea {
+			width: 212px;
+			height: 134.86px;
+			position: absolute;
+			z-index: 5;
+			right: 8.5%; top: -15%;
+		}
+		#crookes figure .doctors {
+			width: 308px;
+			height: 374.41px;
+			position: absolute;
+			z-index: 6;
+			right: 25%; top: -32%;
+		}
+
+	#crookes .row {
+    position: relative;
+		z-index: 7;
+		top: 200px;
+		margin-bottom: 300px;
+	}
+	#crookes .row2 {
+		top: 0;
+		margin-bottom: 20px;
+	}
+	#crookes hgroup {
+		width: 410px;
+		z-index: 4;
+		position: relative;
+	}
+		#crookes h3 {
+			margin-top: 10px;
+			color: rgba(35, 51, 77, 1);
+			opacity: .6;
+		}
+	#crookes .bt {
+		margin-top: -14px;
+		z-index: 4;
+		position: relative;
+	}
+		#crookes button {
+			margin: 0;
+		}
+		#crookes .bt a {
+			padding: 12px 0;
+			display: inline-block;
+			margin: 0 20px;
+		}
+		#crookes .banner {
+			width: 100%;
+			border-radius: 4px;
+			background-color: rgba(255, 255, 255, 1);
+			box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+			padding: 18px 0;
+			margin: 30px 0;
+		}
+			#crookes .banner figure {
+				width: auto;
+				float: left;
+				margin: 9px 58px 0 30px;
+			}
+				#crookes .banner img {
+					width: 148px;
+					height: 148px;
+				}
+			#crookes .banner h4 {
+				margin: 0 100px 2px 0;
+			}
+			#crookes .banner p {
+				margin: 0 100px 0 0;
+			}
+				#crookes .banner p strong {
+					letter-spacing: 0px;
+					padding-left: 8px;
+
+				}
+			#crookes .banner .links {
+				padding: 0;
+			}
+				#crookes .banner span a {
+					border: 1px solid rgba(72, 135, 250, 0.25);
+					padding: 4px 24px 4px 42px;
+					border-radius: 4px;
+					margin: 10px 0 8px 0;
+					display: inline-block;
+				}
+
+				#crookes .banner i {
+					width: 15px;
+					height: 15px;
+					display: inline-block;
+					background: url("../images/icon-arrow.svg") no-repeat center center;
+					margin: 6px 0 0 8px;
+    			position: absolute;
+				}
+				#crookes .banner span i {
+					background: url("../images/icon-play.svg") no-repeat center center;
+					margin: 6px 0 0 -26px;
+				}
+
+	.modal-open {
+		overflow: hidden;
+	}
+		.modal-overlay {
+		  opacity: 0;
+		  filter: alpha(opacity=0);
+		  position: fixed;
+		  top: 0;
+		  left: 0;
+		  z-index: 900;
+		  width: 100%;
+		  height: 100%;
+		  background: rgba(57, 190, 211, .9) !important;
+		}
+			.modal-box {
+			  display: none;
+			  z-index: 1000;
+			  width: 100%;
+				text-align: center;
+				position: fixed;
+			}
+				.modal-box #somevid,
+				.modal-box #somevid2 {
+					border-radius: 4px;
+					box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+					margin-bottom: 20px;
+					width: 90%;
+					max-width: 800px;
+					height: auto;
+				}
+				.modal-box .btn {
+					width: 100px; margin: 0 auto; display: inline-block;
+				}
+
+
+/*------------------------------------*\
+		HOME - SECTION - VANTAGENS
+\*------------------------------------*/
+
+	#vantagens article i {
+		width: 45px;
+		height: 45px;
+		background: url("../images/icon-setting.svg") no-repeat center center;
+		display: block;
+		margin-bottom: 10px;
+	}
+	#vantagens .doc i { background: url("../images/icon-doc.svg") no-repeat center center; }
+	#vantagens .fast i { background: url("../images/icon-fast.svg") no-repeat center center; }
+	#vantagens article p {
+		line-height: 2.25em;
+		margin-top: 6px;
+	}
+#vantagens .metrics {
+	background-color: rgba(255, 255, 255, 1);
+	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+	width: 100%;
+	margin: 43px 0 18px 0;
+	display: inline-block;
+	padding: 25px 0 24px 0;
+}
+	#vantagens .metrics i {
+		background: url("../images/icon-flash.svg") no-repeat center center;
+		width: 40px;
+		height: 40px;
+		display: block;
+		float: left;
+		margin: 11px 10px 0 10px;
+		padding-right: 70px;
+	}
+		#vantagens .metrics h1, #vantagens .metrics p {
+			border-left: 2px solid rgba(236, 243, 255, 1);
+			margin-left: 80px;
+			padding: 0 0 0 20px;
+		}
+	#vantagens .chart {
+		margin-right: 0;
+	}
+		#vantagens .chart i {
+			background-image: url("../images/icon-chart.svg");
+		}
+		#vantagens .cut i {
+			background-image: url("../images/icon-cut.svg");
+		}
+		#vantagens .world i {
+			background-image: url("../images/icon-world.svg");
+		}
+#vantagens .note {
+	text-align: center;
+	margin: 0 0 40px 0;
+}
+	#vantagens .note span {
+		border: 1px solid rgba(35, 51, 77, 0.1);
+		border-radius: 100px;
+		padding: 4px 16px;
+		opacity: .7;
+		font-size: .9em;
+		letter-spacing: 0em;
+		margin: 5px;
+		display: inline-block;
+	}
+
+
+/*------------------------------------*\
+		HOME - SECTION - COMO FUNCIONA
+\*------------------------------------*/
+
+#como-funciona {
+	text-align: center;
+	padding-bottom: 134px;
+}
+	#como-funciona .doc-search {
+		position: absolute;
+		height: 422px;
+		width: 430.27px;
+		top: 20%;
+		left: 0%;
+	}
+		#como-funciona .doc-search img {
+			height: 100%; width: 100%;
+		}
+	#como-funciona .row {
+		position: relative;
+	}
+		#como-funciona h4 {
+			width: 570px;
+			float: right;
+			margin-top: 8px;
+			letter-spacing: 0px;
+		}
+		#como-funciona ol {
+			display: inline-block;
+		}
+			#como-funciona ol li {
+				width: 570px;
+				float: right;
+				margin-top: 29px;
+				display: table;
+				line-height: 1.5em;
+			}
+				#como-funciona ol i {
+					background: url('../images/icon-check.svg') no-repeat center center;
+					width: 38px;
+					height: 38px;
+					display: block;
+					vertical-align: middle;
+					margin-right: 30px;
+				}
+				#como-funciona ol span {
+					display: table-cell;
+					vertical-align: middle;
+				}
+
+
+/*------------------------------------*\
+		HOME - SECTION - RECURSOS
+\*------------------------------------*/
+
+#recursos {
+	width: 100%;
+	text-align: center;
+	margin-bottom: 60px;
+}
+	#recursos .card1 {
+		fill: rgba(255, 255, 255, .9);
+		transform: rotate(-2deg);
+    width: 185%; height: 185%;
+		position: absolute; z-index: 0;
+		top: -90px; left: -480px;
+	}
+	#recursos .card2 {
+		fill: rgba(57, 190, 211, .08);
+    transform: rotate(9deg);
+    width: 580px; height: 416.69px;
+    position: absolute;
+		top: 120px; right: -50px;
+	}
+	@media all and (-ms-high-contrast:none)
+	{
+		#recursos .card1 { display: none } /* IE */
+	}
+	#recursos .row {
+		z-index: 10;
+		position: relative;
+	}
+		#recursos hgroup {
+			float: left;
+			position: relative;
+		}
+		#recursos h5 {
+			width: 65%;
+			float: right;
+			text-align: center;
+			font-size: 1.5em;
+			padding: .5em 2.5em 0 2em;
+			letter-spacing: 0px;
+			line-height: 1.8em;
+			position: relative;
+		}
+		#recursos .tabs {
+			position: relative;
+			display: inline-flex;
+			flex-wrap: wrap;
+			border-bottom: 1px solid rgba(35, 51, 77, 0.1);
+			padding-bottom: 62px;
+			z-index: 5;
+		}
+			#recursos .tabs label {
+				order: 1;
+				display: table;
+				width: 100%;
+				cursor: pointer;
+			  transition: background ease 0.2s;
+				margin: 0 0 1.2em 0;
+			}
+				#recursos .tabs label span {
+					color: rgba(35, 51, 77, 1);
+					display: table;
+					padding: .52em 1.8em .3em 1.8em;
+					border-radius: 4px;
+					width: 31.5%;
+				}
+				#recursos .tabs label:hover span {
+					background-color: rgba(242, 245, 247, 1);
+				}
+					#recursos .tabs label i {
+						width: 40px;
+						height: 40px;
+						border-radius: 100px;
+						background-color: rgba(160, 183, 207, 0.1);
+						fill: rgba(160, 183, 207, 1);
+						display: inline-block;
+				    margin-right: 2rem;
+					}
+					#recursos .tabs label strong {
+						display: table-cell;
+				    vertical-align: middle;
+						width: 100%;
+						letter-spacing: 0.35px;
+					}
+			#recursos .tabs .tab {
+			  order: 99;
+			  flex-grow: 1;
+				width: 100%;
+				display: none;
+			}
+				#recursos .tabs .tab img {
+					border-radius: 5px;
+				}
+			#recursos .tabs input[type="radio"] {
+				display: none;
+			}
+			#recursos .tabs input[type="radio"]:checked + label span {
+				background-color: rgba(72, 135, 250, 1);
+				color: rgba(255, 255, 255, 1);
+			}
+				#recursos .tabs input[type="radio"]:checked + label i {
+					background-color: rgba(255, 255, 255, .1);
+				}
+					#recursos .tabs input[type="radio"]:checked + label svg {
+						fill: rgba(255, 255, 255, 1);
+					}
+			#recursos .tabs input[type="radio"]:checked + label + .tab {
+				display: block;
+				width: 66%;
+				position: absolute;
+				right: 0;
+			}
+				#recursos .tabs input[type="radio"]:checked + label + .tab figure {
+					width: 200px;
+					height: 200px;
+				}
+
+	.testimony {
+		padding: 60px 0 0 0 ;
+	}
+		.testimony hgroup {
+			padding: 60px 0 0 14px;
+		}
+			.testimony figure {
+				float: left;
+				padding-top: 10px;
+			}
+				.testimony figure img {
+					width: 90px; height: 90px;
+					border-radius: 100px;
+				}
+			.testimony p {
+				padding: 0 50px 0 120px;
+				font-style: italic;
+			}
+				.testimony p strong {
+					display: block;
+					line-height: 1.4em;
+					margin-top: 12px;
+					font-style: normal;
+				}
+
+
+/*------------------------------------*\
+		HOME - SECTION - FAQ
+\*------------------------------------*/
+
+	#faq {
+		margin-top: 150px;
+	}
+		#faq .row {
+			position: relative;
+			z-index: 10;
+		}
+			#faq .accordion {
+				margin-top: -20px;
+			}
+			#faq .accordion__item {
+			  position: relative;
+			  padding: 1.3em 0;
+			  width: 100%;
+			  overflow: hidden;
+				border-bottom: 1px solid rgba(173, 190, 213, 0.5);
+			}
+				#faq .accordion__item h4 {
+					cursor: pointer;
+				}
+					#faq .accordion__item h4 svg {
+						width: 15px;
+						height: 10px;
+						margin-left: 15px;
+						-webkit-transition: all .35s;
+					  -o-transition: all .35s;
+					  transition: all .35s;
+						stroke: rgba(242, 245, 247, 1);
+						fill: rgba(35, 51, 77, 1);
+						transform: rotate(180deg);
+					}
+				#faq .active h4 {
+					color: rgba(57, 190, 211, 1);
+				}
+					#faq .active h4 svg {
+						transform: rotate(0deg);
+						fill: rgba(57, 190, 211, 1);
+					}
+					#faq .accordion-body {
+						display: none;
+					}
+
+
+/*------------------------------------*\
+		HOME - SECTION - CONTATO
+\*------------------------------------*/
+
+#contato {
+	margin-top: 80px;
+}
+	#contato .box {
+		box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+		background-color: rgba(255, 255, 255, 1);
+	  border-radius: 4px;
+		padding: 25px;
+	  margin: 0 auto 25px auto;
+		position: relative;
+		z-index: 2;
+	}
+		#contato .box::before,
+		#contato .box::after {
+			content: " ";
+			display: table;
+		}
+		#contato .box::after {
+			clear: both;
+		}
+		#contato .map {
+			min-width: 46%;
+			float: left;
+		}
+			#contato #googleMap {
+				width: 100%;
+				height: 333px;
+				border-radius: 4px;
+			}
+			#contato .map p {
+				background-color: rgba(243, 245, 248, 1);
+				text-align: center;
+				padding: .8em;
+				margin-top: -15px;
+				z-index: 9;
+				position: relative;
+			}
+		#contato form {
+			width: 54%;
+			position: relative;
+			margin: 0;
+			float: right;
+		}
+			#contato hgroup {
+		    width: 540px; float: right;
+			}
+			#contato .case {
+		    min-width: 255px; margin: 0 0 30px 30px;
+				float: left;
+			}
+				#contato .case textarea {
+			    width: 540px;
+				}
+			#contato .botao {
+				width: 100%;
+		    float: none;
+		    clear: both;
+		    text-align: right;
+			}
+
+
+/*------------------------------------*\
+		HOME - SECTION - RODAPE
+\*------------------------------------*/
+
+main .round {
+	position: absolute;
+	bottom: 30px;
+	fill: rgba(57, 190, 211, 1);
+	padding-top: 12px;
+}
+
+footer {
+	position: relative;
+	background-color: rgba(57, 190, 211, 1);
+	margin-top: -30px;
+	color: rgba(255, 255, 255, 1);
+}
+	footer * {
+		color: rgba(255, 255, 255, 1);
+	}
+	footer .copyright {
+    line-height: 1.5em;
+	}
+ 	footer strong {
+		font-weight: 900;
+	}
+	footer .speak {
+		float: right;
+		margin: 60px 0 0 40px;
+	}
+		footer .speak figure, footer .new button  {
+			float: right;
+		  text-align: right;
+		}
+			footer .speak svg {
+				width: 25px; height: 25px;
+				fill: rgba(255, 255, 255, 1);
+				float: left;
+				margin-right: 20px;
+			}
+			footer .email svg {
+				margin-top: 4px;
+				height: 18px;
+			}
+		footer .new {
+			width: 56%;
+	    border-right: 1px solid rgba(255, 255, 255, 0.25);
+	    padding-right: 85px;
+	    margin: 42px 0 40px 0;
+	    padding: 0 85px 10px 0;
+	    float: left;
+		}
+			footer .new .h4, footer .new p {
+				float: left;
+				clear: both;
+			}
+			footer .new button {
+				margin-top: -24px;
+			}
+		footer .credits {
+			border-top: 1px solid rgba(255, 255, 255, 0.25);
+			padding: 32px 0;
+			display: inline-block;
+			width: 100%;
+		}
+			footer .credits .social {
+				float: right;
+				display: table;
+			}
+				footer .credits .social h4 {
+					display: table-cell;
+					vertical-align: middle;
+					padding-right: 15px;
+				}
+				footer .credits .social svg {
+					width: 40px; height: 40px;
+					fill: rgba(255, 255, 255, 1);
+					margin-left: 15px;
+				}
+			footer .credits .logo svg {
+				width: 150px; height: 38.95px;
+				fill: rgba(255, 255, 255, 1);
+				float: left;
+				margin-right: 30px;
+			}
+
+
+/*------------------------------------*\
+		SIGNUP LOGIN - SECTION
+\*------------------------------------*/
+
+.signup-login main {
+	text-align: center;
+	overflow: hidden;
+	position: relative;
+}
+	.signup-login .card {
+		fill: rgba(57, 190, 211, 1);
+		transform: rotate(-30deg);
+		width: 1000px; height: 699.02px;
+		position: absolute; z-index: 0;
+		top: -454px; left: 270px;
+	}
+		@media all and (-ms-high-contrast:none)
+		{
+			.signup-login .card { display: none } /* IE */
+		}
+	.signup-login section {
+		margin: 10% auto;
+		max-width: 612px;
+		z-index: 99;
+		position: relative;
+		text-align: center;
+		padding: 14px;
+		z-index: 10;
+	}
+		.signup-login section .box,
+		.signup-login section form {
+			z-index: 10;
+			position: relative;
+		}
+			.signup-login section .logo {
+				width: 130px; height: 33.75px;
+				margin: 0 auto;
+			}
+				.signup-login section .logo a {
+					margin-left: -6px;
+				}
+					.signup-login section .logo svg {
+						fill: rgba(35, 51, 77, 1);
+					}
+			.signup-login section hgroup {
+				margin: 20px auto 0 auto;
+			}
+				.signup-login section h2 {
+					font-weight: normal;
+					font-size: 1.6em;
+					margin: 0 0 5px 0;
+				}
+				.signup-login section h3 {
+					color: rgba(35, 51, 77, 0.6);
+					font-size: 1em;
+				}
+			.signup-login section form,
+			.signup-login section .box,
+			.login-enter section form {
+				box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+				background: rgba(255, 255, 255, 1);
+				border-radius: 4px;
+				padding: 40px 11px 25px 11px;
+				display: inline-block;
+				margin-bottom: 30px;
+				width: 100%;
+			}
+				.signup-login section .case {
+					width: 45%;
+					margin: 30px 14px 0 14px;
+					float: left;
+				}
+					.signup-login section .case .select {
+						width: 43%;
+						position: relative;
+						border-right: 0;
+					}
+					.signup-login section .case .crm {
+						width: 57%;
+						position: absolute;
+						left: 43%;
+					}
+						.signup-login section .uf .help-block {
+							margin-top: 5px;
+						}
+						.signup-login section .case .crm input {
+							border-top-left-radius: 0;
+					    border-bottom-left-radius: 0;
+							width: 100%;
+						}
+			.signup-login section .left {
+				float: left;
+			}
+			.signup-login section .right {
+				float: left;
+			}
+			.signup-login section .whole {
+		    clear: both;
+		    width: 100%;
+		    text-align: left;
+				padding: 25px 17px 0 17px;
+			}
+				.signup-login section button {
+					float: right;
+				}
+				.signup-login section .whole p {
+					font-size: .9em;
+				}
+		.signup-login section .bt-back a {
+			background: rgba(173, 190, 213, .15);
+			border-radius: 20px;
+			padding: 10px 20px;
+			color: rgba(87, 109, 141, 1);
+			margin-top: 30px;
+			display: inline-block;
+		}
+			.signup-login section .bt-back i {
+		    background: url(../images/icon-arrow2.svg) no-repeat center center;
+				transform: rotate(-90deg);
+				display: inline-block;
+				height: 12px;
+				width: 12px;
+				margin-right: 10px;
+			}
+		.signup-login section .box {
+			max-width: 400px;
+		}
+			.signup-success section hgroup {
+				border-left: 3px solid rgba(0, 200, 117, 1);
+				text-align: left;
+				padding: 25px 10px 25px 25px;
+				margin: 35px 0 45px -12px;
+			}
+				.signup-success section hgroup h1 {
+					font-size: 1.5em;
+					font-weight: 400;
+					color: rgba(0, 200, 117, 1);
+					margin-bottom: 15px;
+				}
+				.signup-success section hgroup h6 {
+					font-size: 1em;
+					font-weight: 400;
+				}
+		.login-password section,
+		.login-enter section {
+			max-width: 428px;
+		}
+			.login-password section .case,
+			.login-enter section .case {
+				width: 92%;
+				float: none;
+			}
+			.login-password section .whole {
+				text-align: center;
+			}
+				.login-password section button {
+					float: none;
+				}
+	.signup-perfil .box .perfil {
+		max-width: 92%;
+		margin: 20px 0 0 14px;
+	}
+		.signup-perfil .box .perfil a {
+			border: 1px solid rgba(173, 190, 213, 0.5);
+			border-radius: 4px;
+			display: table;
+			color: rgba(35, 51, 77, 0.7);
+			box-shadow: 0 1px 4px rgba(173, 190, 213, 0.5);
+			padding: 15px 20px;
+		}
+			.signup-perfil .box .perfil a i {
+				display: table-cell;
+				vertical-align: middle;
+				width: 30px;
+				height: 30px;
+				background: url(../images/icon-arrow3.svg) no-repeat center center;
+			}
+			.signup-perfil .box .perfil a .avatar {
+				width: 45px;
+				height: 45px;
+				background: url(../images/icon-perfil-hospital.svg) no-repeat center center;
+			}
+			.signup-perfil .box .doc a .avatar {
+				background: url(../images/icon-perfil-doc.svg) no-repeat center center;
+			}
+			.signup-perfil .box .perfil a span {
+				margin: 0;
+				padding: 0 20px;
+				width: auto;
+				float: none;
+				display: table-cell;
+				vertical-align: middle;
+				text-align: left;
+				line-height: 1.5em;
+			}
+				.signup-perfil .box .perfil a span strong {
+					display: block;
+					color: rgba(35, 51, 77, 1);
+				}
+
+.login-enter section {
+  max-width: 428px;
+}
+	.login-enter section .recover {
+		text-align: right;
+		font-size: .95em;
+		margin: 30px 14px 0 0;
+	}
+	.login-enter section .whole p {
+		font-size: .95em;
+    padding-top: 4px;
+    letter-spacing: -0.01em;
+		float: left;
+	}
+		form input[switch] {
+		  display: none;
+		}
+			form input[switch] + label {
+			  width: 2.5rem;
+			  height: 1.38rem;
+			  background-color: #dfdfdf;
+			  border-radius: 2rem;
+			  padding: 0.15rem;
+			  cursor: pointer;
+			  display: inline-block;
+			  text-align: center;
+			  position: relative;
+			  box-shadow: none;
+				text-indent: -9999px;
+			  -webkit-transition: all 0.15s ease-in-out;
+			  -moz-transition: all 0.15s ease-in-out;
+			  transition: all 0.15s ease-in-out;
+				top: 5px;
+				left: 0;
+				margin-right: 2px;
+			}
+				form input[switch] + label:before {
+				  /* Label */
+				  content: attr(data-off-label);
+				  display: block;
+				  line-height: 1.74rem;
+				  position: absolute;
+				  right: 0.21667rem;
+				  margin: 0.21667rem;
+				  top: 0;
+				  min-width: 1.66667rem;
+				  overflow: hidden;
+				  -webkit-transition: all 0.15s ease-in-out;
+				  -moz-transition: all 0.15s ease-in-out;
+				  transition: all 0.15s ease-in-out;
+				}
+				input[switch] + label:after {
+				  /* Slider */
+				  content: '';
+				  position: absolute;
+				  left: 0.22rem;
+				  background-color: #fff;
+				  box-shadow: none;
+				  border-radius: 2rem;
+				  height: 1rem;
+				  width: 1rem;
+				  -webkit-transition: all 0.15s ease-in-out;
+				  -moz-transition: all 0.15s ease-in-out;
+				  transition: all 0.15s ease-in-out;
+					box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+				}
+					input[switch]:checked + label {
+					  background-color: rgba(72, 135, 250, 1);
+					  box-shadow: none;
+					}
+						input[switch]:checked + label:before {
+						  color: #fff;
+						  content: attr(data-on-label);
+						  right: auto;
+						  left: 0.21667rem;
+						}
+						input[switch]:checked + label:after {
+						  left: 1.28rem;
+						  background-color: #f7f7f7;
+						  box-shadow: 1px 1px 10px 0 rgba(0, 0, 0, 0.3);
+						}
+
+	#password-show input {
+		width: 100%;
+		background: none;
+	}
+	#password-show .help-block {
+		margin-top: 5px;
+	}
+		#password-show #seePass {
+		  cursor: pointer;
+			display: block;
+		}
+		  #password-show #seePass i {
+				background: url('../images/icon-eye.png') no-repeat center center;
+				width: 20px; height:20px;
+				position: absolute; display: block; right: 10px; top: 10px;
+			}
+			#password-show #seePass .eye-no {
+				background-image: url('../images/icon-eye-no.png');
+			}
+
+@-webkit-keyframes autofill {
+  to {
+    color: rgba(88, 108, 136, 1);
+    background: transparent;
+  }
+}
+input:-webkit-autofill {
+  -webkit-animation-name: autofill;
+  -webkit-animation-fill-mode: both;
+}
+
+
+/*------------------------------------*\
+		MEDIA > 1140px
+\*------------------------------------*/
+
+@media (min-width:1140px) {
+	nav .row {
+		width: 100%;
+	}
+		nav li {
+			float: left;
+		}
+			nav li a {
+				padding: 20px 30px;
+			}
+		nav .menu {
+			clear: none;
+			float: right;
+			max-height: none;
+		}
+			nav .menu-icon {
+				display: none;
+			}
+}
+
+
+/*------------------------------------*\
+		MEDIA < 1140px
+\*------------------------------------*/
+
+@media (max-width:1139px) {
+	nav {
+		background-color: rgba(57, 190, 211, 1);
+		box-shadow: 0 1px 5px rgba(0, 0, 0, 0.20);
+	}
+		nav .logo a, nav .menu-icon {
+			margin: 8px 8px 8px 5px;
+		}
+		nav .logo svg {
+			fill: rgba(255, 255, 255, 1);
+		}
+		nav ul li:first-child a, nav ul li:nth-child(0n+2) a {
+			 color: rgba(255, 255, 255, 1);
+		}
+			nav ul li:first-child a:hover, nav ul li:first-child .active, nav ul li:nth-child(0n+2) a:hover {
+				border-color: rgba(255, 255, 255, 1);
+			}
+
+	#crookes figure .doctors {
+	  top: -32%; right: 10%;
+	}
+	#crookes figure .idea, #crookes figure .dotted {
+		display: none;
+	}
+	#crookes .bt a {
+		color: inherit;
+	}
+	#crookes .banner {
+		text-align: left;
+	}
+		#crookes .banner figure {
+			margin: 9px 30px;
+		}
+			#crookes .banner figure img {
+				width: 90px; height: 90px;
+			}
+		#crookes .banner h4 , #crookes .banner p {
+			margin-right: 0;
+			padding-right: 15px;
+		}
+		#crookes .banner .links {
+			display: inline-block;
+		}
+			#crookes .banner .links span a {
+				margin-right: 0;
+			}
+
+	#como-funciona .doc-search {
+	  right: 0; float: left;
+		margin-left: 600px;
+	}
+	#como-funciona h4,
+	#como-funciona ol li {
+		float: left;
+	}
+
+	#recursos hgroup {
+		float: none;
+	}
+	#recursos h5 {
+		float: none;
+	  text-align: left;
+	  width: 100%;
+	  padding: 0 0 20px 0;
+	}
+
+	#contato .box {
+		display: block;
+	}
+		#contato hgroup {
+			width: 100%;
+			margin: 0;
+		}
+		#contato .map {
+			min-width: 100%;
+			position: relative;
+			left: auto;
+			margin-bottom: 50px;
+		}
+		#contato form {
+			float: none;
+			position: relative;
+			margin: 0;
+			right: auto;
+			width: 100%;
+		}
+			#contato .case {
+				clear: both;
+		    max-width: 50%;
+		    margin: 0 auto 40px auto;
+		    float: none;
+			}
+				#contato .case textarea {
+					width: 100%;
+				}
+				#contato .botao {
+					text-align: center;
+				}
+	footer .new {
+		width: 100%;
+		padding: 10px 0;
+		border: 0;
+		text-align: center;
+	}
+		footer .new p {
+			float: none;
+		}
+		footer .new h4 {
+			display: inline-block;
+			width: 100%;
+		}
+		footer .new button {
+			float: none;
+			margin: 20px;
+		}
+		footer .speak {
+			margin: 0 10px;
+			padding: 10px 0;
+			display: block;
+			float: none;
+			text-align: center;
+		}
+			footer .speak svg {
+				float: none;
+				vertical-align: bottom;
+			}
+	footer .credits {
+		margin-top: 30px;
+		text-align: center;
+	}
+		footer .credits .social {
+			float: none;
+			display: block;
+		}
+			footer .credits .social h4 {
+				width: 100%;
+				display: block;
+				padding: 0 0 15px 0;
+			}
+			footer .credits .social svg {
+				margin: 0 10px 20px 10px;
+			}
+		footer .logo, #footer .copyright a {
+			display: none;
+		}
+}
+
+
+/*------------------------------------*\
+		MEDIA < 800px
+\*------------------------------------*/
+
+@media (max-width:799px) {
+
+	#recursos .card1,
+	#recursos .card2,
+	#crookes figure .doctors,
+	#como-funciona .doc-search {
+		display: none;
+	}
+		#como-funciona ol li {
+			width: 100%;
+		}
+	#recursos hgroup {
+	  float: none;
+	}
+		#recursos h5 {
+		  width: 100%;
+		  padding: 0;
+		  float: none;
+		}
+	#recursos .tabs {
+		display: block;
+	}
+		#recursos .tabs label {
+		  display: inline-block;
+			margin: 2.5em 0 .5em 0;
+			cursor: text;
+		}
+			#recursos .tabs input[type="radio"]:checked + label + .tab {
+				position: relative;
+				width: 100%;
+			}
+			#recursos .tabs label span, #recursos .tabs label:hover span,
+			#recursos .tabs input[type="radio"]:checked + label span {
+				width: 100%;
+				background-color: rgba(0, 0, 0, .05);
+				color: inherit;
+			}
+				#recursos .tabs label i, #recursos .tabs label i,
+				#recursos .tabs input[type="radio"]:checked + label i {
+		    	background-color: rgba(72, 135, 250, 1);
+				}
+					#recursos .tabs label svg, #recursos .tabs label:hover svg,
+					#recursos .tabs input[type="radio"]:checked + label:hover svg {
+						fill: rgba(255, 255, 255, 1);
+					}
+			#recursos .tabs .tab {
+				order: inherit;
+				flex-grow: inherit;
+				width: 100%;
+				display: block;
+			}
+			#recursos .tabs .tab img {
+				width: 100%;
+			}
+			#recursos .tabs input[type="radio"]:checked + label + .tab figure {
+		    width: 100%;
+		    height: auto;
+			}
+		#recursos .testimony p { padding-right: 0; }
+}
+
+
+/*------------------------------------*\
+		MEDIA < 600px
+\*------------------------------------*/
+
+@media (max-width:600px) {
+
+	.home h2, .home h3 {
+		text-align: center;
+	}
+	.home h2 {
+		margin-top: 80px;
+	}
+
+		#crookes .card2 {
+			z-index: 0;
+	    margin-top: -350px;
+	    width: 700px;
+		}
+		#crookes .card1 {
+			z-index: 0;
+			margin-top: -450px;
+			width: 1100px;
+		}
+		#crookes hgroup, #crookes p {
+			width: 100%;
+			position: relative;
+		}
+		#crookes figure {
+			display: none;
+		}
+			#crookes .banner figure {
+				display: block; float: none;
+				margin: 0 auto;
+			}
+			#crookes .banner h4,
+			#crookes .banner p {
+				margin: 0 auto;
+				padding: 0 25px;
+				text-align: center;
+			}
+			#crookes .banner .links {
+		    text-align: center;
+			}
+			#crookes .banner p strong {
+				margin-left: -20px; padding-left: 0;
+			}
+			#crookes .banner p span strong {
+				margin-left: 0;
+			}
+		#crookes .row {
+			text-align: center;
+			margin: 150px auto 50px auto;
+			position: inherit;
+		}
+		#crookes .row2 {
+			top: 0;
+			margin: auto;
+		}
+			#crookes .bt a {
+				color: inherit;
+			}
+	.modal-open {
+		position: fixed;
+	}
+
+	#vantagens #owl1 .owl-item {
+		padding: 0 40px;
+	}
+		#vantagens article {
+			text-align: center;
+		}
+			#vantagens article i {
+				width: 100%;
+			}
+			#vantagens .metrics {
+				padding: 40px 20px;
+			}
+
+	#como-funciona {
+		padding-bottom: 20px;
+	}
+		#como-funciona figure {
+			display: none;
+		}
+		#como-funciona h4 {
+			width: 100%;
+			text-align: center;
+		}
+		#como-funciona ol li {
+		  width: 100%;
+		}
+
+	#recursos h5 {
+		text-align: center;
+	}
+
+	#recursos .testimony hgroup {
+		padding: 0;
+	}
+	#recursos .testimony figure {
+    float: none; margin: 0 auto; padding: 0;
+		text-align: center;
+	}
+	#recursos .testimony p {
+		padding: 0;
+		text-align: center;
+	}
+
+	#faq .accordion__item h4 strong {
+		padding-left: 25px;
+	}
+		#faq .accordion__item h4 svg {
+			margin-left: 0;
+			margin: 0;
+			top: 30px;
+			position: absolute;
+			left: 0;
+		}
+
+	#contato hgroup {
+		width: 100%;
+		margin: -90px 0 0;
+	}
+
+.signup-login section form {
+	padding: 40px 25px 25px;
+}
+	.signup-login section .case {
+		float: none;
+		width: 100%;
+		margin: 30px 0  0;
+	}
+	.signup-login section .whole {
+		padding: 30px 0 0;
+		text-align: center;
+	}
+		.signup-login section .whole button {
+			float: none;
+		}
+			.signup-login section .whole p {
+				display: block;
+				margin-top: 25px;
+			}
+
+.login-enter section .recover {
+	text-align: center;
+}
+.login-enter section .whole {
+  padding: 0;
+}
+	.login-enter section .whole p {
+	  margin: 10px auto 30px 0;
+		float: none;
+	}
+}
+
+
+/*------------------------------------*\
+		INTERNET EXPLORER
+\*------------------------------------*/
+
+@media all and (-ms-high-contrast: none) {
+	section {
+		position: relative;
+		overflow: hidden;
+	}
+}
